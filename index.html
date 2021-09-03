@@ -34,10 +34,10 @@
           div#bgBar {
             display: none;
             position: absolute;
-            width: 300px;
-            margin-left: -150px;
+            width: 420px;
+            margin-left: -210px;
             left: 50%;
-            height: 18px;
+            height: 25px;
             background-color: #000000;
             box-shadow: 1px 1px 5px #111;
           }
@@ -46,23 +46,23 @@
             display: none;
             left: 50%;
             position: absolute;
-            margin-left: -150px;
+            margin-left: -210px;
             width: 0px;
-            height: 18px;
+            height: 25px;
             background-color: #ffffff;
           }
 
           p#loadingInfo {
-            color: #fff;
+            color: white;
             letter-spacing: 1px;
             position: absolute;
             width: 100%;
-            font-family: sans-serif;
+            font-family: 'futura';
             text-align: center;
             top: 50%;
-            font-size: 11px;
+            font-size: 20px;
             font-weight: 500;
-            margin-top: 140px;
+            margin-top: 80px;
             text-shadow: 0px 0px 5px #000;
           }
           
@@ -79,6 +79,12 @@
               to {
                   top: 225%
               }
+          }
+          
+          @font-face
+          {
+            src: url("TemplateData/FuturaStd-Bold.otf");
+            font-family: futura;
           }
           
           body,
@@ -201,8 +207,8 @@
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           {
-            document.getElementById("progressBar").style.width = 300 * progress + "px"
-            document.getElementById("loadingInfo").innerHTML = Math.round(progress * 100) + "%";
+            document.getElementById("progressBar").style.width = 420 * progress + "px"
+            document.getElementById("loadingInfo").innerHTML = "Please wait while your content is loading: " + Math.round(progress * 100) + "%";
             document.getElementById("bgBar").style.display = "block";
             document.getElementById("progressBar").style.display = "inherit";
           }
