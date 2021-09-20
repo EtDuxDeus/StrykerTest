@@ -202,6 +202,7 @@
       
       loadingBar.style.display = "block";
 
+      var gameInstance = null;
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
@@ -217,6 +218,7 @@
           // document.getElementById("icon").style.display = "none";
           document.getElementById("loadingInfo").style.display = "none";
           document.getElementById("box").style.display = "none";
+          gameInstance = unityInstance;
         }).catch((message) => {
           alert(message);
         });
